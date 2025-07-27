@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0; /* Blue-grey background */
+    padding: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.FeedImg {
+    background-image: url('../../assets/NewFeedb.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 30%;
+    border-radius: 10px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Style the card with a gradient background, rounded corners, and shadow */
+.card {
+    background: linear-gradient(135deg, #fffafa, #f0f4f8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #071a53;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h3:hover {
+    color: #02a8f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.rating-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rating-label input {
+    display: none;
+}
+
+.rating-label span {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rating-label svg {
+    width: 40px;
+    height: 40px;
+    color: #888;
+    transition: color 0.2s;
+}
+
+/* Different colors for different rating emojis */
+.rating-label input[value="terrible"]:checked + svg {
+    color: red;
+}
+
+.rating-label input[value="bad"]:checked + svg {
+    color: #ff4500;
+}
+
+.rating-label input[value="okay"]:checked + svg {
+    color: #ffa500;
+}
+
+.rating-label input[value="good"]:checked + svg {
+    color: #32cd32;
+}
+
+.rating-label input[value="amazing"]:checked + svg {
+    color: #1e90ff;
+}
+
+/* Default color change on hover for rating emojis */
+.rating-label:hover svg {
+    color: #007bff;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 14px;
+    background-color: #f4f7f9;
+    height: 190px;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.submit-button,
+.cancel-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.submit-button {
+    background-color: #0a1a2d;
+    color: #fff;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #000;
+}
+
+.cancel-button:hover {
+    background-color: #999;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .FeedImg {
+        display: none;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .faq-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 440px) {
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .rating-label svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .submit-button,
+    .cancel-button {
+        width: 80px;
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}

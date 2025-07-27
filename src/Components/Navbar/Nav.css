@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: white;
+  padding: 10px 40px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 11;
+}
+
+nav {
+  display: flex;
+  /* justify-content: flex-start;  */
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row-reverse; /* ⬅️ puts image on the right */
+  align-items: center;
+  margin-left: 80px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 94px;
+  max-width: 100%;
+
+  height: auto;
+  /* transition: transform 0.3s ease-in-out; */
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Adjust spacing between logo and text */
+  text-decoration: none;
+}
+
+.navDescription {
+  display: flex;
+  align-items: center;
+  margin-left: 8px; /* Remove any default spacing */
+}
+
+/* .logo img:hover {
+  transform: scale(1.1);
+} */
+
+.white-link {
+  color: #457bad;
+  font-size: 30px; /* 👈 Increase this as needed */
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.white-link:hover {
+  color: #1375d0;
+  text-decoration: none; /* 👈 ensures no underline on hover */
+}
+
+/* #4aa3f7 */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  color: #096ac5;
+  text-decoration: none;
+  font-weight: 360;
+  font-size: 22px;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.nav-links a span {
+  margin-left: 5px; /* Adjust this value to increase/decrease the space */
+}
+
+.nav-links a:hover {
+  color: #1375d0;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger:hover div {
+  transform: rotate(5deg);
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #162332;
+    position: absolute;
+    top: 90px; /* Position below the header */
+    left: 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 0;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .dropdown-content {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    top: 90px; /* Adjust the position below the header */
+  }
+
+  .logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    top: 90px; /* Adjust the position below the header */
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .nav-links a {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  header {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 390px) {
+  header {
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  header {
+    padding: 5px 10px;
+  }
+
+  .nav-links {
+    top: 82px; /* Adjust the position below the header */
+    z-index: 0;
+  }
+
+  .logo img {
+    width: 65px;
+  }
+
+  .nav-links a {
+    padding: 6px 8px;
+  }
+
+  nav span .navDescription {
+    display: none;
+    color: black;
+  }
+
+  nav .navDescription h1 {
+    font-size: 1rem;
+  }
+  nav .navDescription h4 {
+    font-size: 0.8rem;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
